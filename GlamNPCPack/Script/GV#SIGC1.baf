@@ -1,0 +1,13 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+ActionOverride("GV#SIGU",EscapeArea())
+ActionOverride("GV#KRAK",EscapeArea())
+ActionOverride("GV#MARI",EscapeArea())
+ActionOverride("GV#WINK",EscapeArea())
+Wait(5)
+EndCutSceneMode()
+END
+

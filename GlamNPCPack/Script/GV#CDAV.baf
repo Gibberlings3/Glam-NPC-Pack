@@ -1,0 +1,21 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#DAVE")
+ActionOverride("GV#ALAN",MoveToPoint([1505.1890]))
+ActionOverride("GV#BRIA",MoveToPoint([1435.1935]))
+ActionOverride("GV#KELL",MoveToPoint([1525.2020]))
+ActionOverride("GV#PAM",MoveToPoint([1650.2015]))
+ActionOverride("GV#PHIL",MoveToPoint([1585.1950]))
+ActionOverride("GV#THUN",MoveToPoint([1560.1950]))
+Wait(6)
+ActionOverride("GV#ALAN",DestroySelf())
+ActionOverride("GV#BRIA",DestroySelf())
+ActionOverride("GV#KELL",DestroySelf())
+ActionOverride("GV#PAM",DestroySelf())
+ActionOverride("GV#PHIL",DestroySelf())
+ActionOverride("GV#THUN",DestroySelf())
+EndCutSceneMode()
+END
+

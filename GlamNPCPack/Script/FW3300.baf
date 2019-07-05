@@ -1,0 +1,89 @@
+IF
+Global("GV#DAVEExists","%Beregost%",0)
+THEN
+RESPONSE #100
+SetGlobal("GV#DAVEExists","%Beregost%",1)
+CreateCreature("GV#DAVE",[2100.2480],0)
+END
+
+
+IF
+InParty("GV#DAVE")
+Global("GV#DAVEExperienceSet","GLOBAL",0)
+XPLT(Player1,4001)
+THEN
+RESPONSE #100
+SetGlobal("GV#DAVEExperienceSet","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty("GV#DAVE")
+Global("GV#DAVEExperienceSet","GLOBAL",0)
+XPGT(Player1,4000)
+XPLT(Player1,8001)
+THEN
+RESPONSE #100
+SetGlobal("GV#DAVEExperienceSet","GLOBAL",1)
+AddXPObject("GV#DAVE",4000)
+Continue()
+END
+
+IF
+InParty("GV#DAVE")
+Global("GV#DAVEExperienceSet","GLOBAL",0)
+XPGT(Player1,8000)
+XPLT(Player1,16001)
+THEN
+RESPONSE #100
+SetGlobal("GV#DAVEExperienceSet","GLOBAL",1)
+AddXPObject("GV#DAVE",10000)
+Continue()
+END
+
+IF
+InParty("GV#DAVE")
+Global("GV#DAVEExperienceSet","GLOBAL",0)
+XPGT(Player1,16000)
+XPLT(Player1,32001)
+THEN
+RESPONSE #100
+SetGlobal("GV#DAVEExperienceSet","GLOBAL",1)
+AddXPObject("GV#DAVE",22000)
+Continue()
+END
+
+IF
+InParty("GV#DAVE")
+Global("GV#DAVEExperienceSet","GLOBAL",0)
+XPGT(Player1,32000)
+XPLT(Player1,64001)
+THEN
+RESPONSE #100
+SetGlobal("GV#DAVEExperienceSet","GLOBAL",1)
+AddXPObject("GV#DAVE",46000)
+Continue()
+END
+
+IF
+InParty("GV#DAVE")
+Global("GV#DAVEExperienceSet","GLOBAL",0)
+XPGT(Player1,64000)
+XPLT(Player1,128001)
+THEN
+RESPONSE #100
+SetGlobal("GV#DAVEExperienceSet","GLOBAL",1)
+AddXPObject("GV#DAVE",94000)
+Continue()
+END
+
+IF
+InParty("GV#DAVE")
+Global("GV#DAVEExperienceSet","GLOBAL",0)
+XPGT(Player1,128000)
+THEN
+RESPONSE #100
+SetGlobal("GV#DAVEExperienceSet","GLOBAL",1)
+AddXPObject("GV#DAVE",128000)
+Continue()
+END

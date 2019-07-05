@@ -1,0 +1,32 @@
+IF
+AreaCheck("%EBaldursGate_SorcerousSundries_L1%")
+Global("GV#KrakusMorph","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("GV#KrakusMorph","GLOBAL",1)
+Polymorph("NOBLE_MAN")
+END
+
+
+IF
+Allegiance(Myself,ENEMY)
+Global("GV#KrakusDemorph","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("GV#KrakusDemorph","GLOBAL",1)
+Polymorph("FIGHTER_MALE_HUMAN")
+END
+
+IF
+Allegiance(Myself,NEUTRAL)
+OR(3)
+Allegiance("GV#SIGU",ENEMY)
+Allegiance("GV#MARI",ENEMY)
+Allegiance("GV#WINK",ENEMY)
+THEN
+RESPONSE #100
+Enemy()
+END
+
+
+

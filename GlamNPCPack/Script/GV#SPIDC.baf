@@ -1,0 +1,24 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#VYND")
+SetSequence(2)
+Wait(1)
+CreateCreatureObject("GV#SPID","%IMOEN_DV%",0,0,0)
+CreateCreatureObject("GV#SPID","%IMOEN_DV%",0,0,0)
+CreateCreatureObject("GV#SPID","%IMOEN_DV%",0,0,0)
+CreateCreatureObject("GV#SPID","%IMOEN_DV%",0,0,0)
+CreateCreatureObject("GV#SPID","%IMOEN_DV%",0,0,0)
+CreateCreatureObject("GV#SPID","%IMOEN_DV%",0,0,0)
+DisplayStringHead("GV#VYND",~Spiders! Spiders everywhere!~)
+Wait(3)
+DisplayStringHead("%IMOEN_DV%",~AAAAAAHHHHHHH!~)
+Wait(3)
+DisplayStringHead("GV#VYND",~Last laugh, pinkie!~)
+Wait(4)
+EndCutSceneMode()
+RestParty()
+SetGlobal("GV#VYNDSpiders","GLOBAL",2)
+END
+

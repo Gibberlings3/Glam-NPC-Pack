@@ -1,0 +1,34 @@
+IF
+InParty("GV#DAVE")
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck("GV#DAVE",CD_STATE_NOTVALID)
+Global("GV#TARAIntro","GLOBAL",0)
+THEN
+RESPONSE #100
+Dialogue("GV#DAVE")
+END
+
+IF
+!StateCheck(Myself,CD_STATE_NOTVALID)
+GlobalGT("GV#TARAIntro","GLOBAL",0)
+!AreaCheck("%HighHedge_House%")
+!AreaCheck("%HighHedge%")
+THEN
+RESPONSE #100
+DestroySelf()
+END
+
+IF
+InParty("GV#DAVE")
+InMyArea("GV#DAVE")
+InMyArea(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck("GV#DAVE",CD_STATE_NOTVALID)
+Global("GV#TARAIntro","GLOBAL",1)
+THEN
+RESPONSE #100
+Wait(1)
+StartDialogueNoSet("GV#DAVE")
+END

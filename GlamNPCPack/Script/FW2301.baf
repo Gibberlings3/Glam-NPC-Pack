@@ -1,0 +1,13 @@
+IF
+Global("SIGUExists","%FriendlyArmInn_L1%",0)
+Global("GV#FLARMetSigurd","GLOBAL",1)
+Global("GV#FLARQuest","GLOBAL",1)
+GlobalTimerExpired("GV#FLARSigurdTimer","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("SIGUExists","%FriendlyArmInn_L1%",1)
+CreateCreature("GV#SIGU",[650.420],0)
+CreateCreature("GV#KRAK",[600.420],0)
+CreateCreature("GV#MARI",[620.420],0)
+CreateCreature("GV#WINK",[670.420],0)
+END

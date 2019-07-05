@@ -1,0 +1,12 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#FLAR")
+FaceObject("GV#VYND")
+ForceSpellRES("GV#BLAST","GV#VYND")
+Wait(3)
+SetGlobal("GV#FLARVyndBlast","GLOBAL",1)
+ActionOverride("GV#VYND",StartDialogueNoSet("GV#FLAR")
+EndCutSceneMode()
+END

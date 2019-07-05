@@ -1,0 +1,11 @@
+IF
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck("GV#LITT",CD_STATE_NOTVALID)
+Global("GV#LITTDadQuest","GLOBAL",3)
+InParty("GV#LITT")
+InMyArea("GV#LITT")
+THEN
+RESPONSE #100
+StartDialogueNoSet("GV#LITT")
+END

@@ -1,0 +1,15 @@
+//Ajantis Banter
+IF
+InParty(Myself)
+InParty("Ajantis")
+See("Ajantis")
+RealGlobalTimerExpired("GV#DAVEAjantisTimer","GLOBAL")
+Global("GV#DAVEAjantis1","GLOBAL",1)
+Global("GV#DAVEAjantis2","GLOBAL",0)
+!StateCheck("Ajantis",CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+SetGlobal("GV#DAVEAjantisRest","GLOBAL",1)
+ActionOverride("GV#DAVE",Interact("Ajantis"))
+END

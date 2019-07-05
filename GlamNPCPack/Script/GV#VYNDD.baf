@@ -1,0 +1,50 @@
+IF
+    InParty(Myself)
+    InParty("%IMOEN_DV%")
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck("%IMOEN_DV%",CD_STATE_NOTVALID)
+    Global("GV#VYNDImoen1","GLOBAL",1)
+    Global("GV#VYNDImoen2","GLOBAL",1)
+    Global("GV#VYNDImoen3","GLOBAL",0)
+    RealGlobalTimerExpired("GV#VYNDSpiderTimer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("GV#VYNDSpiders","GLOBAL",1)
+    StartDialogueNoSet("%IMOEN_DV%")
+END
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("GV#VYNDTimer","GLOBAL")
+Global("GV#VYNDShutUp","GLOBAL",0)
+Global("GV#VYNDTalk","GLOBAL",7)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!Global("GV#VYNDSpiders","GLOBAL",1)
+OR(21)
+        AreaCheck("%BaldursGateDocks_JopalinsTavern%")
+     	AreaCheck("%Beregost_FeldepostsInn_L1%")
+     	AreaCheck("%Beregost_JovialJuggler_L1%")
+     	AreaCheck("%Beregost_RedSheaf_L1%")
+     	AreaCheck("%Beregost_BurningWizard_L1%")
+     	AreaCheck("%EBaldursGate_KeexieTavern_L1%")
+     	AreaCheck("%EBaldursGate_ElfsongTavern_L1%")
+     	AreaCheck("%EBaldursGate_Inn_L1%")
+     	AreaCheck("%FriendlyArmInn_L1%")
+     	AreaCheck("%Nashkel_Inn%")
+     	AreaCheck("%NBaldursGate_ThreeOldKegs_L1%")
+     	AreaCheck("%NEBaldursGate_BlushingMermaid_L1%")
+     	AreaCheck("%NEBaldursGate_SplurgingSturgeon_L2%")
+     	AreaCheck("%NEBaldursGate_SplurgingSturgeon_L1%")
+     	AreaCheck("%NWBaldursGate_Helm&Cloak_L1%")
+     	AreaCheck("%NWBaldursGate_Tavern_L1%")
+     	AreaCheck("%SEBaldursGate_Inn_L1%")
+     	AreaCheck("%SEBaldursGate_Blade&Stars_L1%")
+     	AreaCheck("%SWBaldursGate_Tavern_L1%")
+     	AreaCheck("%SWBaldursGate_YeOldeInn_L1%")
+     	AreaCheck("%UlgothsBeard_Inn%")
+THEN
+RESPONSE #100
+IncrementGlobal("GV#VYNDTalk","GLOBAL",1)
+StartDialogueNoSet(Player1)
+END

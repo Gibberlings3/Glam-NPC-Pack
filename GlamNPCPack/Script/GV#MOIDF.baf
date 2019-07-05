@@ -1,0 +1,20 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#MOID")
+SetName(~Moidre~)
+SetPlayerSound(Myself,~An honour.~ [GV#MOIDb],LEADER)
+SetPlayerSound(Myself,~*yawn*~ [GV#MOIDc],TIRED)
+SetPlayerSound(Myself,~~ [GV#MOIDl],DAMAGE)
+SetPlayerSound(Myself,~~ [GV#MOIDm],DYING)
+SetPlayerSound(Myself,~Ignore the pain.~ [GV#MOIDe],HURT)
+SetPlayerSound(Myself,~What?~ [GV#MOIDf],SELECT_COMMON1)
+SetPlayerSound(Myself,~Huh?~ [GV#MOIDg],SELECT_COMMON2)
+SetPlayerSound(Myself,~Speak.~ [GV#MOIDh],SELECT_COMMON3)
+SetPlayerSound(Myself,~As you wish.~ [GV#MOIDi],SELECT_ACTION1)
+SetPlayerSound(Myself,~Done.~ [GV#MOIDj],SELECT_ACTION2)
+SetPlayerSound(Myself,~Fine.~ [GV#MOIDk],SELECT_ACTION3)
+SetPlayerSound(Myself,~When asked about her past, Moidre says little, which you've quickly come to realise is normal for her. Her helmet, which she refuses to remove even when ordered, hides her countenance from the world, and her voice rarely wavers from its flat inflection, making her as easy to engage with as a brick; however, her intense discipline marks her as something more than common sellsword.~,EXISTANCE5)
+EndCutSceneMode()
+END

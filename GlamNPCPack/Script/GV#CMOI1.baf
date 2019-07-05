@@ -1,0 +1,16 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+MoveViewObject("GV#MOID",INSTANT)
+SetGlobal("GV#MOIDSarevokTalk","GLOBAL",3)
+GiveItemCreate("GV#HELM","GV#MOID",1,1,0)
+Wait(1)
+ActionOverride("GV#MOID",FillSlot(SLOT_HELMET))
+PlaySound("GAM_17B")
+Wait(2)
+ActionOverride("GV#MOID",StartDialogueNoSet(Player1))
+EndCutSceneMode()
+END
+

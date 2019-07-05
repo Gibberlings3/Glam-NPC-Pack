@@ -1,0 +1,11 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#KRAK")
+ActionOverride("GV#FLAR",EscapeArea())
+Wait(6)
+EndCutSceneMode()
+StartDialogueNoSet(Player1)
+END
+

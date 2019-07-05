@@ -1,0 +1,28 @@
+IF
+AreaCheck("%EBaldursGate_SorcerousSundries_L1%")
+Global("GV#MarinaMorph","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("GV#MarinaMorph","GLOBAL",1)
+Polymorph("NOBLE_WOMAN")
+END
+
+IF
+Allegiance(Myself,ENEMY)
+Global("GV#MarinaDemorph","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("GV#MarinaDemorph","GLOBAL",1)
+Polymorph("CLERIC_FEMALE_HUMAN")
+END
+
+IF
+Allegiance(Myself,NEUTRAL)
+OR(3)
+Allegiance("GV#SIGU",ENEMY)
+Allegiance("GV#KRAK",ENEMY)
+Allegiance("GV#WINK",ENEMY)
+THEN
+RESPONSE #100
+Enemy()
+END

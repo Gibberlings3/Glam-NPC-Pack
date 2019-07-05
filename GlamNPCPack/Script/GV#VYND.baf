@@ -1,0 +1,765 @@
+IF
+HotKey(K)
+THEN
+RESPONSE #100
+StartCutSceneMode()
+StartCutScene("GV#VYNDF")
+END
+
+
+IF
+InParty(Myself)
+Global("GV#VYNDTalk","GLOBAL",0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("GV#VYNDTimer","GLOBAL",3600)
+SetGlobal("GV#VYNDTalk","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("GV#VYNDTimer","GLOBAL")
+Global("GV#VYNDShutUp","GLOBAL",0)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+!AreaType(DUNGEON)
+OR(13)
+Global("GV#VYNDTalk","GLOBAL",1)
+Global("GV#VYNDTalk","GLOBAL",5)
+Global("GV#VYNDTalk","GLOBAL",9)
+Global("GV#VYNDTalk","GLOBAL",11)
+Global("GV#VYNDTalk","GLOBAL",13)
+Global("GV#VYNDTalk","GLOBAL",17)
+Global("GV#VYNDTalk","GLOBAL",21)
+Global("GV#VYNDTalk","GLOBAL",25)
+THEN
+RESPONSE #100
+IncrementGlobal("GV#VYNDTalk","GLOBAL",1)
+END
+
+
+IF
+InParty(Myself)
+Global("GV#VYNDShutUp","GLOBAL",0)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+!AreaType(DUNGEON)
+OR(13)
+Global("GV#VYNDTalk","GLOBAL",2)
+Global("GV#VYNDTalk","GLOBAL",6)
+Global("GV#VYNDTalk","GLOBAL",10)
+Global("GV#VYNDTalk","GLOBAL",12)
+Global("GV#VYNDTalk","GLOBAL",14)
+Global("GV#VYNDTalk","GLOBAL",18)
+Global("GV#VYNDTalk","GLOBAL",22)
+Global("GV#VYNDTalk","GLOBAL",26)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+
+//Second talk, daylight only
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("GV#VYNDTimer","GLOBAL")
+Global("GV#VYNDShutUp","GLOBAL",0)
+Global("GV#VYNDTalk","GLOBAL",3)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+AreaType([OUTDOOR])
+TimeGT(7)
+TimeLT(19)
+THEN
+RESPONSE #100
+IncrementGlobal("GV#VYNDTalk","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+Global("GV#VYNDShutUp","GLOBAL",0)
+Global("GV#VYNDTalk","GLOBAL",4)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+AreaType([OUTDOOR])
+TimeGT(7)
+TimeLT(19)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+
+//Eighth talk, after resting
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("GV#VYNDTimer","GLOBAL")
+Global("GV#VYNDTalk","GLOBAL",15)
+PartyRested()
+Global("GV#VYNDShutUp","GLOBAL",0)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+IncrementGlobal("GV#VYNDTalk","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("GV#VYNDTimer","GLOBAL")
+Global("GV#VYNDTalk","GLOBAL",16)
+See(Player1)
+Global("GV#VYNDShutUp","GLOBAL",0)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+//Tenth talk, chapter five or higher
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("GV#VYNDTimer","GLOBAL")
+Global("GV#VYNDTalk","GLOBAL",19)
+GlobalGT("CHAPTER","GLOBAL",%tutu_chapter_4%)
+Global("GV#VYNDShutUp","GLOBAL",0)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+Global("GV#CloakwoodTalk","GLOBAL",2)
+!AreaType(DUNGEON)
+THEN
+RESPONSE #100
+IncrementGlobal("GV#VYNDTalk","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("GV#VYNDTimer","GLOBAL")
+Global("GV#VYNDTalk","GLOBAL",20)
+See(Player1)
+Global("GV#VYNDShutUp","GLOBAL",0)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!AreaType(DUNGEON)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+//12th friendship talk, Last Chapter
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("GV#VYNDTimer","GLOBAL")
+Global("GV#VYNDTalk","GLOBAL",23)
+Global("GV#VYNDShutUp","GLOBAL",0)
+GlobalGT("CHAPTER","GLOBAL",%tutu_chapter_6%)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+Global("GV#WantedTalk","GLOBAL",2)
+THEN
+RESPONSE #100
+IncrementGlobal("GV#VYNDTalk","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("GV#VYNDTimer","GLOBAL")
+Global("GV#VYNDTalk","GLOBAL",24)
+See(Player1)
+Global("GV#VYNDShutUp","GLOBAL",0)
+GlobalGT("CHAPTER","GLOBAL",%tutu_chapter_6%)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+
+
+
+//Third Chapter Talk, after Nashkel Mines
+
+IF
+InParty(Myself)
+Global("GV#VYNDShutUp","GLOBAL",0)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("GV#MineTalk","GLOBAL",0)
+Global("CHAPTER","GLOBAL",%tutu_chapter_3%)
+THEN
+RESPONSE #100
+SetGlobal("GV#MineTalk","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+Global("GV#VYNDShutUp","GLOBAL",0)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("CHAPTER","GLOBAL",%tutu_chapter_3%)
+Global("GV#MineTalk","GLOBAL",1)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+
+//Fourth Chapter Talk, after Bandit Camp
+
+IF
+InParty(Myself)
+Global("GV#VYNDShutUp","GLOBAL",0)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("CHAPTER","GLOBAL",%tutu_chapter_4%)
+Global("GV#BanditTalk","GLOBAL",0)
+Global("GV#MineTalk","GLOBAL",2)
+THEN
+RESPONSE #100
+SetGlobal("GV#BanditTalk","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+Global("GV#VYNDShutUp","GLOBAL",0)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("CHAPTER","GLOBAL",%tutu_chapter_4%)
+Global("GV#BanditTalk","GLOBAL",1)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+
+//Fifth Chapter Talk, after Cloakwood Mines
+
+IF
+InParty(Myself)
+Global("GV#VYNDShutUp","GLOBAL",0)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("CHAPTER","GLOBAL",%tutu_chapter_5%)
+Global("GV#CloakwoodTalk","GLOBAL",0)
+Global("GV#BanditTalk","GLOBAL",2)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("GV#VYNDTimer","GLOBAL",600)
+SetGlobal("GV#CloakwoodTalk","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+Global("GV#VYNDShutUp","GLOBAL",0)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("CHAPTER","GLOBAL",%tutu_chapter_5%)
+Global("GV#CloakwoodTalk","GLOBAL",1)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+//Sixth Chapter Talk, in Candlekeep
+
+IF
+InParty(Myself)
+Global("GV#VYNDShutUp","GLOBAL",0)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+AreaCheck("%Candlekeep_Ch6%")
+Global("CHAPTER","GLOBAL",%tutu_chapter_6%)
+Global("GV#CandlekeepTalk","GLOBAL",0)
+Global("GV#CloakwoodTalk","GLOBAL",2)
+THEN
+RESPONSE #100
+SetGlobal("GV#CandlekeepTalk","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+Global("GV#VYNDShutUp","GLOBAL",0)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+AreaCheck("%Candlekeep_Ch6%")
+Global("CHAPTER","GLOBAL",%tutu_chapter_6%)
+Global("GV#CandlekeepTalk","GLOBAL",1)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+//Seventh Chapter Talk, after Candlekeep
+
+IF
+InParty(Myself)
+Global("GV#VYNDShutUp","GLOBAL",0)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("CHAPTER","GLOBAL",%tutu_chapter_7%)
+Global("GV#WantedTalk","GLOBAL",0)
+Global("GV#CandlekeepTalk","GLOBAL",2)
+THEN
+RESPONSE #100
+SetGlobal("GV#WantedTalk","GLOBAL",1)
+RealSetGlobalTimer("GV#VYNDTimer","GLOBAL",600)
+END
+
+IF
+InParty(Myself)
+Global("GV#VYNDShutUp","GLOBAL",0)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("CHAPTER","GLOBAL",%tutu_chapter_7%)
+Global("GV#WantedTalk","GLOBAL",1)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+//Seventh Chapter Talk, back in Baldur's Gate
+
+IF
+InParty(Myself)
+Global("GV#VYNDShutUp","GLOBAL",0)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("CHAPTER","GLOBAL",%tutu_chapter_7%)
+OR(9)
+AreaCheck("%NBaldursGate%")
+AreaCheck("%NWBaldursGate%")
+AreaCheck("%NEBaldursGate%")
+AreaCheck("%EBaldursGate%")
+AreaCheck("%WBaldursGate%")
+AreaCheck("%SBaldursGate%")
+AreaCheck("%SEBaldursGate%")
+AreaCheck("%SWBaldursGate%")
+AreaCheck("%CentralBaldursGate%")
+Global("GV#BaldurTalk","GLOBAL",0)
+Global("GV#WantedTalk","GLOBAL",2)
+THEN
+RESPONSE #100
+SetGlobal("GV#BaldurTalk","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+Global("GV#VYNDShutUp","GLOBAL",0)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("CHAPTER","GLOBAL",%tutu_chapter_7%)
+Global("GV#BaldurTalk","GLOBAL",1)
+OR(9)
+AreaCheck("%NBaldursGate%")
+AreaCheck("%NWBaldursGate%")
+AreaCheck("%NEBaldursGate%")
+AreaCheck("%EBaldursGate%")
+AreaCheck("%WBaldursGate%")
+AreaCheck("%SBaldursGate%")
+AreaCheck("%SEBaldursGate%")
+AreaCheck("%SWBaldursGate%")
+AreaCheck("%CentralBaldursGate%")
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+
+//Last Chapter talk, after Sarevok Confrontation
+
+IF
+InParty(Myself)
+Global("GV#VYNDShutUp","GLOBAL",0)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+AreaCheck("%ThievesMaze%")
+Global("GV#SarevokTalk","GLOBAL",0)
+Global("GV#BaldurTalk","GLOBAL",2)
+THEN
+RESPONSE #100
+SetGlobal("GV#SarevokTalk","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+Global("GV#VYNDShutUp","GLOBAL",0)
+GlobalGT("GV#VYNDTalk","GLOBAL",24)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("GV#SarevokTalk","GLOBAL",1)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+
+//Abdel's Corpse
+
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Range("gv#corps",20)
+    Global("GV#VyndCorpse","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("GV#VYNDCorpse","GLOBAL",1)
+END
+
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Range("gv#corps",20)
+    Global("GV#VYNDCorpse","GLOBAL",1)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+END
+
+
+//Drizzt Killed
+
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    See("DRIZZT")
+    Dead("DRIZZT")
+    Global("GV#VyndDrizzt","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("GV#VYNDDrizzt","GLOBAL",1)
+END
+
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("GV#VYNDDrizzt","GLOBAL",1)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+END
+
+//Nathan's Corpse
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    PartyHasItem("%tutu_var%MISC67")
+    Global("GV#VyndBrun","GLOBAL",1)
+    Global("GV#VyndNathan","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("GV#VYNDNathan","GLOBAL",1)
+END
+
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    PartyHasItem("%tutu_var%MISC67")
+    Global("GV#VYNDNathan","GLOBAL",1)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+END
+
+//Albert the Demon
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    !See("Albert")
+    Global("RUFIE","GLOBAL",3)
+    Global("GV#VyndAlbert","GLOBAL",0)
+    Global("GV#VYNDMetAlbert","GLOBAL",1)
+THEN
+  RESPONSE #100
+  RealSetGlobalTimer("GV#VYNDAlbertTimer","GLOBAL",30)
+    SetGlobal("GV#VYNDAlbert","GLOBAL",1)
+END
+
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    !See("Albert")
+    Global("RUFIE","GLOBAL",3)
+    Global("GV#VYNDAlbert","GLOBAL",1)
+    !RealGlobalTimerExpired("GV#VYNDAAlbertTimer","GLOBAL")
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+END
+
+
+//Doppelgangers in Candlekeep
+
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("GV#VyndDoppelganger","GLOBAL",1)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+END
+
+
+//Daerragh's Phoenix Guard
+
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    OR (2)
+    !InMyArea("Daerragh")
+    Dead("Daerragh")
+    Global("GV#VYNDDaerragh","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("GV#VYNDDaerragh","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    OR (2)
+    !InMyArea("Daerragh")
+    Dead("Daerragh")
+    Global("GV#VYNDDaerragh","GLOBAL",2)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+END
+
+
+//Slythe dead
+
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Dead("Slythe")
+    Dead("Krystin")
+    Global("GV#VYNDSlythe","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("GV#VYNDSlythe","GLOBAL",2)
+END
+
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Dead("Slythe")
+    Dead("Krystin")
+    Global("GV#VYNDSlythe","GLOBAL",2)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+END
+
+
+//Drienne's Cat
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    InParty("GV#LITT")
+    !StateCheck("GV#LITT",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    AreaCheck("%DryadFalls%")
+    PartyHasItem("MISC62")
+    Global("GV#LITTVyndShot","GLOBAL",2)
+    Global("GV#VYNDPixie","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("GV#VYNDPixie","GLOBAL",1)
+END
+
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    InParty("GV#LITT")
+    !StateCheck("GV#LITT",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    AreaCheck("%DryadFalls%")
+    PartyHasItem("MISC62")
+    Global("GV#LITTVyndShot","GLOBAL",2)
+    Global("GV#VYNDPixie","GLOBAL",1)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet("GV#LITT")
+END
+
+
+//Flara fought Kirian
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    InParty("GV#FLAR")
+    !StateCheck("GV#FLAR",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("GV#FLARKirian","GLOBAL",1)
+    Dead("Kirian")
+    Dead("Lindin")
+    Dead("Baerin")
+    Dead("Peter")
+    Global("GV#VYNDKirian","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("GV#VYNDKirian","GLOBAL",1)
+END
+
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    InParty("GV#FLAR")
+    !StateCheck("GV#FLAR",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("GV#FLARKirian","GLOBAL",1)
+    Dead("Kirian")
+    Dead("Lindin")
+    Dead("Baerin")
+    Dead("Peter")
+    Global("GV#VYNDKirian","GLOBAL",1)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet("GV#FLAR")
+END
+
+//Elfsong Tavern
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    InParty("GV#DAVE")
+    !StateCheck("GV#DAVE",CD_STATE_NOTVALID)
+    InParty("GV#FLAR")
+    !StateCheck("GV#FLAR",CD_STATE_NOTVALID)
+    InParty("GV#LITT")
+    !StateCheck("GV#LITT",CD_STATE_NOTVALID)
+    InParty("GV#MOID")
+    !StateCheck("GV#MOID",CD_STATE_NOTVALID)
+    !StateCheck("BART8",CD_STATE_NOTVALID)
+    See(Player1)
+    See("GV#DAVE")
+    See("GV#FLAR")
+    See("GV#LITT")
+    See("GV#MOID")
+    See("BART8")
+    AreaCheck("%EBaldursGate_ElfsongTavern_L1%")
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("GV#VYNDElfsong","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("GV#VYNDElfsong","GLOBAL",1)
+END
+
+IF
+    InParty(Myself)
+    !StateCheck("GV#VYND",CD_STATE_NOTVALID)
+    InParty("GV#DAVE")
+    !StateCheck("GV#DAVE",CD_STATE_NOTVALID)
+    InParty("GV#FLAR")
+    !StateCheck("GV#FLAR",CD_STATE_NOTVALID)
+    InParty("GV#LITT")
+    !StateCheck("GV#LITT",CD_STATE_NOTVALID)
+    InParty("GV#MOID")
+    !StateCheck("GV#MOID",CD_STATE_NOTVALID)
+    !StateCheck("BART8",CD_STATE_NOTVALID)
+    See(Player1)
+    See("GV#DAVE")
+    See("GV#FLAR")
+    See("GV#LITT")
+    See("GV#MOID")
+    See("BART8")
+    AreaCheck("%EBaldursGate_ElfsongTavern_L1%")
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("GV#VYNDElfsong","GLOBAL",1)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet("Player1")
+END
+

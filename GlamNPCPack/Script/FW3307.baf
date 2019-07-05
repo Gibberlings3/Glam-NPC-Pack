@@ -1,0 +1,90 @@
+IF
+Global("VYNDExists","%Beregost_BurningWizard_L1%",0)
+THEN 
+RESPONSE #100
+SetGlobal("VYNDExists","%Beregost_BurningWizard_L1%",1)
+CreateCreature("GV#VYND",[170.120],0)
+END
+
+
+
+IF
+InParty("GV#VYND")
+Global("GV#VYNDExperienceSet","GLOBAL",0)
+XPLT(Player1,4001)
+THEN
+RESPONSE #100
+SetGlobal("GV#VYNDExperienceSet","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty("GV#VYND")
+Global("GV#VYNDExperienceSet","GLOBAL",0)
+XPGT(Player1,4000)
+XPLT(Player1,8001)
+THEN
+RESPONSE #100
+SetGlobal("GV#VYNDExperienceSet","GLOBAL",1)
+AddXPObject("GV#VYND",4000)
+Continue()
+END
+
+IF
+InParty("GV#VYND")
+Global("GV#VYNDExperienceSet","GLOBAL",0)
+XPGT(Player1,8000)
+XPLT(Player1,16001)
+THEN
+RESPONSE #100
+SetGlobal("GV#VYNDExperienceSet","GLOBAL",1)
+AddXPObject("GV#VYND",10000)
+Continue()
+END
+
+IF
+InParty("GV#VYND")
+Global("GV#VYNDExperienceSet","GLOBAL",0)
+XPGT(Player1,16000)
+XPLT(Player1,32001)
+THEN
+RESPONSE #100
+SetGlobal("GV#VYNDExperienceSet","GLOBAL",1)
+AddXPObject("GV#VYND",22000)
+Continue()
+END
+
+IF
+InParty("GV#VYND")
+Global("GV#VYNDExperienceSet","GLOBAL",0)
+XPGT(Player1,32000)
+XPLT(Player1,64001)
+THEN
+RESPONSE #100
+SetGlobal("GV#VYNDExperienceSet","GLOBAL",1)
+AddXPObject("GV#VYND",46000)
+Continue()
+END
+
+IF
+InParty("GV#VYND")
+Global("GV#VYNDExperienceSet","GLOBAL",0)
+XPGT(Player1,64000)
+XPLT(Player1,128001)
+THEN
+RESPONSE #100
+SetGlobal("GV#VYNDExperienceSet","GLOBAL",1)
+AddXPObject("GV#VYND",94000)
+Continue()
+END
+
+IF
+InParty("GV#VYND")
+Global("GV#VYNDExperienceSet","GLOBAL",0)
+XPGT(Player1,128000)
+THEN
+RESPONSE #100
+SetGlobal("GV#VYNDExperienceSet","GLOBAL",1)
+AddXPObject("GV#VYND",128000)
+Continue()
+END

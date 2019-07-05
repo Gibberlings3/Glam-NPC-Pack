@@ -1,0 +1,7 @@
+IF
+Global("GV#CORPSExists","%DurlagsTower_D1%",0)
+THEN 
+RESPONSE #100
+SetGlobal("GV#CORPSExists","%DurlagsTower_D1%",1)
+CreateCreature("gv#corps",[1660.1430],0)
+END

@@ -1,0 +1,34 @@
+IF
+Global("GV#SpawnTalassans","GLOBAL",1)
+Global("GV#TalassansExist","%HighHedge_House%",0)
+THEN
+RESPONSE #100
+SetGlobal("GV#TalassansExist","%HighHedge_House%",1)
+CreateCreature("GV#JEFF",[125.275],12)
+CreateCreature("GV#THUN",[110.300],12)
+CreateCreature("GV#PHIL",[235.290],4)
+CreateCreature("GV#PAM",[420.210],4)
+CreateCreature("GV#BRIA",[330.255],4)
+CreateCreature("GV#ALAN",[285.250],4)
+CreateCreature("GV#KELLa",[210.205],2)
+END
+
+IF
+Global("GV#TARAIntro","GLOBAL",1)
+Global("GV#KnightsExist","%HighHedge_House%",0)
+THEN
+RESPONSE #100
+SetGlobal("GV#KnightsExist","%HighHedge_House%",1)
+CreateCreature("GV#STOR",[100.320],12)
+CreateCreature("GV#STOR",[120.190],12)
+END
+
+IF
+Global("GV#TARAIntro","GLOBAL",1)
+Global("GV#JEFFDestroyed","%HighHedge_House%",0)
+THEN
+RESPONSE #100
+ActionOverride("GV#JEFF",DestroySelf())
+SetGlobal("GV#JEFFDestroyed","%HighHedge_House%",1)
+END
+

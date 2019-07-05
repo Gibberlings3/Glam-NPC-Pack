@@ -1,0 +1,101 @@
+IF
+Global("GV#FLARExists","%Nashkel_BelchingDragonTavern%",0)
+GlobalLT("CHAPTER","GLOBAL",%tutu_chapter_3%)
+THEN
+RESPONSE #100
+SetGlobal("GV#FLARExists","%Nashkel_BelchingDragonTavern%",1)
+CreateCreature("GV#FLAR",[420.240],0)
+END
+
+IF
+Global("GV#FLARExists","%Nashkel_BelchingDragonTavern%",1)
+GlobalGT("CHAPTER","GLOBAL",%tutu_chapter_2%)
+Global("GV#FLARRecruited","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("GV#FLARExists","%Nashkel_BelchingDragonTavern%",2)
+ActionOverride("GV#FLAR",DestroySelf())
+END
+
+
+
+IF
+InParty("GV#FLAR")
+Global("GV#FLARExperienceSet","GLOBAL",0)
+XPLT(Player1,4001)
+THEN
+RESPONSE #100
+SetGlobal("GV#FLARExperienceSet","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty("GV#FLAR")
+Global("GV#FLARExperienceSet","GLOBAL",0)
+XPGT(Player1,4000)
+XPLT(Player1,8001)
+THEN
+RESPONSE #100
+SetGlobal("GV#FLARExperienceSet","GLOBAL",1)
+AddXPObject("GV#FLAR",4000)
+Continue()
+END
+
+IF
+InParty("GV#FLAR")
+Global("GV#FLARExperienceSet","GLOBAL",0)
+XPGT(Player1,8000)
+XPLT(Player1,16001)
+THEN
+RESPONSE #100
+SetGlobal("GV#FLARExperienceSet","GLOBAL",1)
+AddXPObject("GV#FLAR",10000)
+Continue()
+END
+
+IF
+InParty("GV#FLAR")
+Global("GV#FLARExperienceSet","GLOBAL",0)
+XPGT(Player1,16000)
+XPLT(Player1,32001)
+THEN
+RESPONSE #100
+SetGlobal("GV#FLARExperienceSet","GLOBAL",1)
+AddXPObject("GV#FLAR",22000)
+Continue()
+END
+
+IF
+InParty("GV#FLAR")
+Global("GV#FLARExperienceSet","GLOBAL",0)
+XPGT(Player1,32000)
+XPLT(Player1,64001)
+THEN
+RESPONSE #100
+SetGlobal("GV#FLARExperienceSet","GLOBAL",1)
+AddXPObject("GV#FLAR",46000)
+Continue()
+END
+
+IF
+InParty("GV#FLAR")
+Global("GV#FLARExperienceSet","GLOBAL",0)
+XPGT(Player1,64000)
+XPLT(Player1,128001)
+THEN
+RESPONSE #100
+SetGlobal("GV#FLARExperienceSet","GLOBAL",1)
+AddXPObject("GV#FLAR",94000)
+Continue()
+END
+
+IF
+InParty("GV#FLAR")
+Global("GV#FLARExperienceSet","GLOBAL",0)
+XPGT(Player1,128000)
+THEN
+RESPONSE #100
+SetGlobal("GV#FLARExperienceSet","GLOBAL",1)
+AddXPObject("GV#FLAR",128000)
+Continue()
+END

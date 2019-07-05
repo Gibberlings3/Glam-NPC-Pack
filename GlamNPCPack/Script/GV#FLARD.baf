@@ -1,0 +1,56 @@
+//Sigurd Ambush
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("GV#SigurdTimer","GLOBAL")
+Global("GV#FLARTalk","GLOBAL",13)
+Global("GV#FLARShutUp","GLOBAL",0)
+Global("GVSigurdAmbush","GLOBAL",0)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck("GV#FLAR",CD_STATE_NOTVALID)
+!AreaType(DUNGEON)
+THEN
+RESPONSE #100
+SetGlobal("GVSigurdAmbush","GLOBAL",1)
+CreateCreatureObjectOffScreen("GV#SIGU",Myself,0,0,0)
+ClearAllActions()
+StartCutSceneMode()
+StartCutScene("GV#SIGC2")
+END
+
+
+//Montaron Banter
+IF
+InParty(Myself)
+InParty("Montaron")
+See("Montaron")
+InParty("Xzar")
+See("Xzar")
+RealGlobalTimerExpired("GV#FLARMontaronTimer","GLOBAL")
+Global("GV#FLARMontaron1","GLOBAL",1)
+Global("GV#FLARMontaron2","GLOBAL",0)
+!StateCheck("Montaron",CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+AreaType(OUTDOOR)
+THEN
+RESPONSE #100
+SetGlobal("GV#FLARMontaronRest","GLOBAL",1)
+ActionOverride("Montaron",Interact("GV#FLAR"))
+END
+
+//Rasaad Banter
+IF
+InParty(Myself)
+InParty("Rasaad")
+See("Rasaad")
+RealGlobalTimerExpired("GV#FLARRasaadTimer","GLOBAL")
+Global("GV#FLARRasaad1","GLOBAL",1)
+Global("GV#FLARRasaad2","GLOBAL",0)
+!StateCheck("Rasaad",CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+SetGlobal("GV#FLARRasaadRest","GLOBAL",1)
+ActionOverride("Rasaad",Interact("GV#FLAR"))
+END

@@ -1,0 +1,15 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#TARA")
+ActionOverride("GV#ALAN",EscapeAreaMove("%HighHedge%",1510,1590,12))
+ActionOverride("GV#BRIA",EscapeAreaMove("%HighHedge%",1470,1620,11))
+ActionOverride("GV#PAM",EscapeAreaMove("%HighHedge%",1650,1700,8))
+ActionOverride("GV#PHIL",EscapeAreaMove("%HighHedge%",1560,1630,11))
+ActionOverride("GV#KELL",EscapeAreaMove("%HighHedge%",1550,1670,11))
+ActionOverride("GV#THUN",EscapeAreaMove("%HighHedge%",1590,1510,13))
+Wait(10)
+EndCutSceneMode()
+END
+

@@ -1,0 +1,34 @@
+IF
+Global("GV#PIERExists","%CloakwoodLodge%",0)
+Global("HelpAldeth","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("GV#PIERExists","%CloakwoodLodge%",1)
+CreateCreature("GV#PIER",[2580.2110],0)
+END
+
+IF
+Global("GV#PIERExists","%CloakwoodLodge%",1)
+Global("HelpAldeth","GLOBAL",1)
+Dead("Seniyad")
+!See([ENEMY])
+Global("GV#LITTMetDad","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("GV#PIERExists","%CloakwoodLodge%",0)
+ActionOverride("GV#PIER",EscapeArea())
+END
+
+IF
+Global("GV#PIERExists","%CloakwoodLodge%",1)
+Global("HelpAldeth","GLOBAL",1)
+Allegiance("Aldeth",ENEMY)
+Global("GV#LITTMetDad","GLOBAL",0)
+Global("GV#PiersonEnemy","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("GV#PiersonEnemy","GLOBAL",1)
+ActionOverride("GV#PIER",Enemy())
+END
+
+

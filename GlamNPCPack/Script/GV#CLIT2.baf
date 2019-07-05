@@ -1,0 +1,17 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#LITT")
+FaceObject("GV#VYND")
+EquipRanged()
+Wait(1)
+SetSequence(8)
+PlaySound("SWI_02B")
+Wait(1)
+ReallyForceSpellRES("GV#SHOT","GV#VYND")
+Wait(3)
+SetGlobal("GV#LITTVyndShot","GLOBAL",1)
+ActionOverride("GV#VYND",StartDialogueNoSet("GV#LITT"))
+EndCutSceneMode()
+END

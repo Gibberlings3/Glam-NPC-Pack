@@ -1,0 +1,17 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#DAVE")
+Wait(1)
+CreateCreature("GV#COMM1",[1480.2030],0)
+CreateCreature("GV#COMM2",[1510.2035],14)
+CreateCreature("GV#COMM3",[1400.2090],14)
+ActionOverride("GV#COMM1",MoveToPoint([1345.1800]))
+ActionOverride("GV#COMM2",MoveToPoint([1400.1790]))
+ActionOverride("GV#COMM3",MoveToPoint([1285.1800]))
+Wait(7)
+ActionOverride("GV#COMM1",StartDialogueNoSet("GV#DAVE"))
+EndCutSceneMode()
+END
+

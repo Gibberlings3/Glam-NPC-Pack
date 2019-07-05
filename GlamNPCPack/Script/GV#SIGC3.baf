@@ -1,0 +1,14 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+ActionOverride("GV#SIGU",EscapeAreaMove("%EBaldursGate_SorcerousSundries_L1%",430,290,0))
+ActionOverride("GV#KRAK",EscapeAreaMove("%EBaldursGate_SorcerousSundries_L1%",480,280,0))
+ActionOverride("GV#MARI",EscapeAreaMove("%EBaldursGate_SorcerousSundries_L1%",370,300,0))
+ActionOverride("GV#WINK",EscapeAreaMove("%EBaldursGate_SorcerousSundries_L1%",400,240,0))
+Wait(7)
+EndCutSceneMode()
+RestParty()
+END
+

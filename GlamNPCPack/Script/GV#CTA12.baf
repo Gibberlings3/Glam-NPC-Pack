@@ -1,0 +1,23 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#DAVE")
+FadeToColor([20.0],0)
+Wait(2)
+ActionOverride("GV#THUN",DestroySelf())
+ActionOverride("GV#COMM1",DestroySelf())
+ActionOverride("GV#COMM2",DestroySelf())
+ActionOverride("GV#COMM3",DestroySelf())
+ActionOverride("GV#ALAN",MoveBetweenAreas("%HighHedge_House%",[285.250],12))
+ActionOverride("GV#BRIA",MoveBetweenAreas("%HighHedge_House%",[330.255],0))
+ActionOverride("GV#KELL",MoveBetweenAreas("%HighHedge_House%",[210.205],12))
+ActionOverride("GV#PAM",MoveBetweenAreas("%HighHedge_House%",[420.210],12))
+ActionOverride("GV#PHIL",MoveBetweenAreas("%HighHedge_House%",[235.290],0))
+Wait(2)
+FadeFromColor([20.0],0)
+SetGlobal("GV#DAVETrial","GLOBAL",8)
+SetGlobal("GV#DAVEIdolCharged","GLOBAL",1)
+EndCutSceneMode()
+END
+

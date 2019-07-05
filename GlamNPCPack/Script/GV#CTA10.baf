@@ -1,0 +1,14 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#ALAN")
+Wait(1)
+ActionOverride("GV#TARA",MoveToPoint([1770.2180]))
+Wait(6)
+ActionOverride("GV#TARA",DestroySelf())
+Wait(2)
+StartDialogueNoSet("GV#DAVE")
+EndCutSceneMode()
+END
+

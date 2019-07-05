@@ -1,0 +1,32 @@
+//Ajantis Banter
+IF
+InParty(Myself)
+InParty("Ajantis")
+See("Ajantis")
+RealGlobalTimerExpired("GV#LITTAjantisTimer","GLOBAL")
+Global("GV#LITTAjantis1","GLOBAL",1)
+Global("GV#LITTAjantis2","GLOBAL",0)
+!StateCheck("Ajantis",CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+SetGlobal("GV#LITTAjantisRest","GLOBAL",1)
+ActionOverride("GV#LITT",Interact("Ajantis"))
+END
+
+//Coran Banter
+IF
+InParty(Myself)
+InParty("Coran")
+See("Coran")
+RealGlobalTimerExpired("GV#LITTCoranTimer","GLOBAL")
+Global("GV#LITTCoran1","GLOBAL",1)
+Global("GV#LITTCoran2","GLOBAL",0)
+!StateCheck("Coran",CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+SetGlobal("GV#LITTCoranRest","GLOBAL",1)
+ActionOverride("Coran",Interact("GV#LITT"))
+END
+

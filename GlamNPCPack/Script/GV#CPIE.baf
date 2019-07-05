@@ -1,0 +1,12 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#PIER")
+ActionOverride("GV#LITT",MoveToPoint([2580.2130]))
+ActionOverride("GV#LITT",FaceObject("GV#PIER"))
+Wait(6)
+StartDialogueNoSet("GV#LITT")
+EndCutSceneMode()
+END
+

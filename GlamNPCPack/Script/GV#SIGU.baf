@@ -1,0 +1,48 @@
+IF
+InParty("GV#FLAR")
+Global("GV#FLARMetSigurd","GLOBAL",0)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck("GV#FLAR",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+MoveToObject("GV#FLAR")
+Dialogue("GV#FLAR")
+END
+
+
+IF
+Global("GV#FLARMetSigurd","GLOBAL",1)
+Global("GV#FLARQuest","GLOBAL",1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck("GV#FLAR",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+See("GV#FLAR")
+InParty("GV#FLAR")
+THEN
+RESPONSE #100
+StartDialogueNoSet("GV#FLAR")
+END
+
+IF
+Allegiance(Myself,NEUTRAL)
+OR(3)
+Allegiance("GV#MARI",ENEMY)
+Allegiance("GV#KRAK",ENEMY)
+Allegiance("GV#WINK",ENEMY)
+THEN
+RESPONSE #100
+Enemy()
+END
+
+IF
+Allegiance(Myself,ENEMY)
+HasItem("POTN11","GV#SIGU")
+THEN
+RESPONSE #100
+UseItem("Potn11",Myself)
+END
+

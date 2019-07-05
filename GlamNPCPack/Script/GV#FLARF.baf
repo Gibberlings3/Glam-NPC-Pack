@@ -1,0 +1,27 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("gv#flar")
+SetName(~Flara~)
+SetPlayerSound(Myself,~I leave you to handle this!~ [gv#flarw],MORALE)
+SetPlayerSound(Myself,~It is only right that I lead.~ [gv#flarb],LEADER)
+SetPlayerSound(Myself,~Are we to march till we drop? I must have rest!~ [gv#flarc],TIRED)
+SetPlayerSound(Myself,~If I stand still much longer, I shall sproud roots.~ [gv#flard],BORED)
+SetPlayerSound(Myself,~Die, fool!~ [gv#flara],BATTLE_CRY1)
+SetPlayerSound(Myself,~Die, fool!~ [gv#flara],BATTLE_CRY2)
+SetPlayerSound(Myself,~Die, fool!~ [gv#flara],BATTLE_CRY3)
+SetPlayerSound(Myself,~Die, fool!~ [gv#flara],BATTLE_CRY4)
+SetPlayerSound(Myself,~Die, fool!~ [gv#flara],BATTLE_CRY5)
+SetPlayerSound(Myself,~~ [gv#flarl],DAMAGE)
+SetPlayerSound(Myself,~~ [gv#flarm],DYING)
+SetPlayerSound(Myself,~I'm hurt! Help me, you fools!~ [gv#flare],HURT)
+SetPlayerSound(Myself,~What?~ [gv#flarf],SELECT_COMMON1)
+SetPlayerSound(Myself,~What is it?~ [gv#flarg],SELECT_COMMON2)
+SetPlayerSound(Myself,~I'm listening.~ [gv#flarh],SELECT_COMMON3)
+SetPlayerSound(Myself,~I'll do it.~ [gv#flari],SELECT_ACTION1)
+SetPlayerSound(Myself,~So be it.~ [gv#flarj],SELECT_ACTION2)
+SetPlayerSound(Myself,~If I must.~ [gv#flark],SELECT_ACTION3)
+SetPlayerSound(Myself,~Before you even had the chance to ask about her past, Flara insisted she was once a powerful red dragon, who is now trapped in human form. This may be true, or it may not; she can offer no concrete explanation for how such a predicament came about, nor does she recall much of her time before it. Nevertheless, the air around her ripples with heat, and her fiery breath is difficult to argue with, though not as much as her temperament.~,EXISTANCE5)
+EndCutSceneMode()
+END

@@ -1,0 +1,25 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+SetGlobal("GV#LITTDadQuest","GLOBAL",1)
+ActionOverride("GV#LITT",Face(14))
+SmallWait(4)
+ActionOverride("GV#PIER",UseItem("POTN14",Myself))
+ActionOverride("GV#PIER",DisplayStringHead(Myself,~quaffs a potion~))
+Wait(4)
+ActionOverride("GV#PIER", MoveToPoint([1980.2150]))
+Wait(1)
+ActionOverride("GV#LITT",FaceObject("GV#PIER"))
+SmallWait(4)
+ActionOverride("GV#LITT",DisplayStringHead(Myself,~GET BACK HERE!~))
+Wait(4)
+ActionOverride("GV#PIER",MoveBetweenAreas("%NBaldursGate_ThreeOldKegs_L1%",[1050.480],2))
+Wait(1)
+ActionOverride("Seniyad",DisplayStringHead(Myself,~*AHEM*~))
+Wait(4)
+ActionOverride("Seniyad",StartDialogueNoSet(Player1))
+EndCutSceneMode()
+END
+

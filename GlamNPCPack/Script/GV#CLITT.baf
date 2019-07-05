@@ -1,0 +1,18 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#LITT")
+FaceObject("Sonner")
+EquipRanged()
+Wait(1)
+SetSequence(8)
+PlaySound("SWI_02B")
+Wait(1)
+ReallyForceSpellRES("GV#SHOT2","Sonner")
+Wait(3)
+SetGlobal("GV#LITTSonnerShot","GLOBAL",1)
+ActionOverride("Jebadoh",Enemy())
+ActionOverride("Telman",Enemy())
+EndCutSceneMode()
+END

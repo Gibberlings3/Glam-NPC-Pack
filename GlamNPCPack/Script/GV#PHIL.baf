@@ -1,0 +1,19 @@
+IF
+InParty("GV#DAVE")
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck("GV#DAVE",CD_STATE_NOTVALID)
+!AreaCheck("%HighHedge_House%")
+Global("GV#TARAIntro","GLOBAL",3)
+Global("GV#TalassansLeft","GLOBAL",0)
+InMyArea(Player1)
+InMyArea("GV#DAVE")
+InMyArea("GV#ALAN")
+InMyArea("GV#BRIA")
+InMyArea("GV#KELL")
+InMyArea("GV#PAM")
+InMyArea("GV#THUN")
+THEN
+RESPONSE #100
+StartDialogueNoSet("GV#DAVE")
+END

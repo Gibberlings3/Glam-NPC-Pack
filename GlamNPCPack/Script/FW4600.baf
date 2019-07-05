@@ -1,0 +1,89 @@
+IF
+Global("GV#LITTExists","%BearRiver%",0)
+THEN
+RESPONSE #100
+SetGlobal("GV#LITTExists","%BearRiver%",1)
+CreateCreature("GV#LITT",[820.3230],2)
+END
+
+
+IF
+InParty("GV#LITT")
+Global("GV#LITTExperienceSet","GLOBAL",0)
+XPLT(Player1,4001)
+THEN
+RESPONSE #100
+SetGlobal("GV#LITTExperienceSet","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty("GV#LITT")
+Global("GV#LITTExperienceSet","GLOBAL",0)
+XPGT(Player1,4000)
+XPLT(Player1,8001)
+THEN
+RESPONSE #100
+SetGlobal("GV#LITTExperienceSet","GLOBAL",1)
+AddXPObject("GV#LITT",4000)
+Continue()
+END
+
+IF
+InParty("GV#LITT")
+Global("GV#LITTExperienceSet","GLOBAL",0)
+XPGT(Player1,8000)
+XPLT(Player1,16001)
+THEN
+RESPONSE #100
+SetGlobal("GV#LITTExperienceSet","GLOBAL",1)
+AddXPObject("GV#LITT",10000)
+Continue()
+END
+
+IF
+InParty("GV#LITT")
+Global("GV#LITTExperienceSet","GLOBAL",0)
+XPGT(Player1,16000)
+XPLT(Player1,32001)
+THEN
+RESPONSE #100
+SetGlobal("GV#LITTExperienceSet","GLOBAL",1)
+AddXPObject("GV#LITT",22000)
+Continue()
+END
+
+IF
+InParty("GV#LITT")
+Global("GV#LITTExperienceSet","GLOBAL",0)
+XPGT(Player1,32000)
+XPLT(Player1,64001)
+THEN
+RESPONSE #100
+SetGlobal("GV#LITTExperienceSet","GLOBAL",1)
+AddXPObject("GV#LITT",46000)
+Continue()
+END
+
+IF
+InParty("GV#LITT")
+Global("GV#LITTExperienceSet","GLOBAL",0)
+XPGT(Player1,64000)
+XPLT(Player1,128001)
+THEN
+RESPONSE #100
+SetGlobal("GV#LITTExperienceSet","GLOBAL",1)
+AddXPObject("GV#LITT",94000)
+Continue()
+END
+
+IF
+InParty("GV#LITT")
+Global("GV#LITTExperienceSet","GLOBAL",0)
+XPGT(Player1,128000)
+THEN
+RESPONSE #100
+SetGlobal("GV#LITTExperienceSet","GLOBAL",1)
+AddXPObject("GV#LITT",128000)
+Continue()
+END

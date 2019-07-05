@@ -1,0 +1,21 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("GV#PIER")
+    MoveViewPoint([2713.2093],INSTANT)
+    ActionOverride("Aldeth",Face(14))
+    CreateCreature("DRUID3",[2966.2428],10)
+    ActionOverride("Druid3",MoveToPoint([2648.2200]))
+    ActionOverride("Druid3",Face(9))
+    CreateCreature("DRUID3",[3048.2379],10)
+    ActionOverride("Druid3",MoveToPoint([2720.2207]))
+    CreateCreature("DRUID3",[3114.2324],10)
+    ActionOverride("Druid3",MoveToPoint([2813.2120]))
+    CreateCreature("SENIYA",[3133.2387],10)
+    ActionOverride("Seniyad",MoveToPoint([2695.2130]))
+    Wait(6)
+    StartDialogueNoSet("GV#LITT")
+END
+
+

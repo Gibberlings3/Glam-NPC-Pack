@@ -1,0 +1,13 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#TARA")
+Wait(1)
+ReallyForceSpellRES("GV#LIGH",Myself)
+Wait(3)
+SetGlobal("GV#DAVETrial","GLOBAL",5)
+StartDialogueNoSet("GV#DAVE")
+EndCutSceneMode()
+END
+

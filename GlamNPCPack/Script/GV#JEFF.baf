@@ -1,0 +1,24 @@
+IF
+InParty("GV#DAVE")
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck("GV#DAVE",CD_STATE_NOTVALID)
+Global("GV#JEFFIntro","GLOBAL",0)
+THEN
+RESPONSE #100
+StartDialogueNoSet("GV#DAVE")
+END
+
+IF
+OR (2) !InParty("GV#DAVE") Dead("GV#DAVE")
+Global("GV#JEFFIntro","GLOBAL",0)
+THEN
+RESPONSE #100
+Enemy()
+ActionOverride("GV#ALAN",Enemy()
+ActionOverride("GV#BRIA",Enemy()
+ActionOverride("GV#KELL",Enemy()
+ActionOverride("GV#PAM",Enemy()
+ActionOverride("GV#PHIL",Enemy()
+ActionOverride("GV#THUN",Enemy()
+END

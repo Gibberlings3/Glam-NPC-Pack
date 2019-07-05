@@ -1,0 +1,29 @@
+IF
+AreaCheck("%EBaldursGate_SorcerousSundries_L1%")
+Global("GV#WinkMorph","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("GV#WinkMorph","GLOBAL",1)
+Polymorph("PEASANT_MAN")
+END
+
+IF
+Allegiance(Myself,ENEMY)
+Global("GV#WinkDemorph","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("GV#WinkDemorph","GLOBAL",1)
+Polymorph("THIEF_MALE_GNOME")
+END
+
+IF
+Allegiance(Myself,NEUTRAL)
+OR(3)
+Allegiance("GV#SIGU",ENEMY)
+Allegiance("GV#KRAK",ENEMY)
+Allegiance("GV#MARI",ENEMY)
+THEN
+RESPONSE #100
+Enemy()
+END
+

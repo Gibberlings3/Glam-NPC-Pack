@@ -1,0 +1,12 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#DAVE")
+SetGlobal("GV#DAVEAloraCutscene","GLOBAL",2)
+ReallyForceSpellRES("GV#LIGH",Myself)
+Wait(4)
+StartDialogueNoSet("Alora")
+EndCutSceneMode()
+END
+

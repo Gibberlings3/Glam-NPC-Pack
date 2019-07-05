@@ -1,0 +1,13 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#VYND")
+FaceObject("ZAL")
+SetSequence(11)
+Wait(1)
+ReallyForceSpellRES("GV#DART", "ZAL")
+Wait(3)
+SetGlobal("GV#VaxInterject","GLOBAL",1)
+StartDialogueNoSet("Vax")
+END

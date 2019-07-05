@@ -1,0 +1,6 @@
+IF
+Global("GV#DAVETrial","GLOBAL",8)
+THEN
+RESPONSE #100
+DestroySelf()
+END

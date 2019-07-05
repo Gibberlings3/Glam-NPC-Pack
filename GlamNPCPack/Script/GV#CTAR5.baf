@@ -1,0 +1,18 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#TARA")
+ActionOverride("GV#ALAN",DisplayStringHead("GV#ALAN",~*laughter*~))
+ActionOverride("GV#BRIA",DisplayStringHead("GV#BRIA",~*laughter*~))
+ActionOverride("GV#KELL",DisplayStringHead("GV#KELL",~*laughter*~))
+ActionOverride("GV#PAM",DisplayStringHead("GV#PAM",~*laughter*~))
+ActionOverride("GV#PHIL",DisplayStringHead("GV#PHIL",~*laughter*~))
+Wait(3)
+DisplayStringHead(Myself,~Stop talking.~)
+Wait(3)
+SetGlobal("GV#DAVETrial","GLOBAL",3)
+StartDialogueNoSet("GV#DAVE")
+EndCutSceneMode()
+END
+

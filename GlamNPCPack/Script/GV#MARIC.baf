@@ -1,0 +1,12 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+SetGlobal("GV#MarinaHug","GLOBAL",1)
+ActionOverride("GV#MARI",MoveToObject("GV#FLAR"))
+Wait(7)
+ActionOverride("GV#SIGU",StartDialogueNoSet("GV#FLAR"))
+EndCutSceneMode()
+END
+

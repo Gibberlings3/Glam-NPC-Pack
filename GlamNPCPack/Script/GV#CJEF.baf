@@ -1,0 +1,18 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#JEFF")
+DisplayStringHead(Myself,~WALK FEARLESS IN THE STORM!~)
+Wait(2)
+ActionOverride("GV#DAVE",DisplayStringHead(Myself,~WALK FEARLESS IN THE STORM!~))
+ActionOverride("GV#ALAN",DisplayStringHead(Myself,~WALK FEARLESS IN THE STORM!~))
+ActionOverride("GV#BRIA",DisplayStringHead(Myself,~WALK FEARLESS IN THE STORM!~))
+ActionOverride("GV#PAM",DisplayStringHead(Myself,~WALK FEARLESS IN THE STORM!~))
+ActionOverride("GV#PHIL",DisplayStringHead(Myself,~WALK FEARLESS IN THE STORM!~))
+ActionOverride("GV#KELL",DisplayStringHead(Myself,~Walk fearless in...um...~))
+Wait(4)
+EndCutSceneMode()
+StartDialogueNoSet("GV#KELLa")
+END
+

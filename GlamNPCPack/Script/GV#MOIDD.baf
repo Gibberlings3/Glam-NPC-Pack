@@ -1,0 +1,28 @@
+//Third Talk, on Rest
+IF
+InParty(Myself)
+RealGlobalTimerExpired("GV#MOIDTimer","GLOBAL")
+Global("GV#MOIDShutUp","GLOBAL",0)
+Global("GV#MOIDTalk","GLOBAL",5)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+IncrementGlobal("GV#MOIDTalk","GLOBAL",1)
+StartDialogueNoSet(Player1)
+END
+
+//Eighth Talk, on Rest
+IF
+InParty(Myself)
+RealGlobalTimerExpired("GV#MOIDTimer","GLOBAL")
+Global("GV#MOIDShutUp","GLOBAL",0)
+Global("GV#MOIDTalk","GLOBAL",15)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+IncrementGlobal("GV#MOIDTalk","GLOBAL",1)
+StartDialogueNoSet(Player1)
+END
+

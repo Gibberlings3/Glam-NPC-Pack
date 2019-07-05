@@ -1,0 +1,24 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#SIGU")
+SetGlobal("GV#FLARQuest","GLOBAL",3)
+CreateCreatureObjectOffScreen("GV#KRAK",Myself,0,0,0)
+CreateCreatureObjectOffScreen("GV#MARI",Myself,0,0,0)
+CreateCreatureObjectOffScreen("GV#WINK",Myself,0,0,0)
+ActionOverride("GV#KRAK",Polymorph("FIGHTER_MALE_HUMAN"))
+ActionOverride("GV#MARI",Polymorph("CLERIC_FEMALE_HUMAN"))
+ActionOverride("GV#WINK",Polymorph("THIEF_MALE_GNOME"))
+ActionOverride("GV#KRAK",SetName(~Krakus~))
+ActionOverride("GV#MARI",SetName(~Marina~))
+ActionOverride("GV#WINK",SetName(~Winkelried~))
+Wait(1)
+ActionOverride("GV#KRAK",MoveToObject("GV#SIGU"))
+ActionOverride("GV#MARI",MoveToObject("GV#SIGU"))
+ActionOverride("GV#WINK",MoveToObject("GV#SIGU"))
+Wait(6)
+StartDialogueNoSet("Player1")
+EndCutSceneMode()
+END
+
