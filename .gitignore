@@ -1,0 +1,13 @@
+*.7z
+*.rar
+*.zip
+*.tar.gz
+*.debug
+*.log
+*.exe
+!iconv.exe
+!oggdec.exe
+!tisunpack.exe
+setup-glamnpcpack
+setup-glamnpcpack.command
+GlamNPCPack/backup/*
