@@ -29,7 +29,7 @@ END
 
 END
 
-LANGUAGE ~English~ ~English~ ~GlamNPCPack/English/Setup-NPCPack.tra~
+LANGUAGE ~English~ ~English~ ~GlamNPCPack/Languages/English/Setup-NPCPack.tra~
 BEGIN ~Glam's NPC Pack for BG:EE, BGT and BG TUTU~
 
 
@@ -516,7 +516,7 @@ COMPILE EVALUATE_BUFFER ~GlamNPCPack/Dialogue~
 
 
 //JOURNAL
-ADD_JOURNAL @1 @2 @3 @4 @5 @6 @7 USING ~GlamNPCPack/English/Setup-NPCPack.tra~
+ADD_JOURNAL @1 @2 @3 @4 @5 @6 @7 USING ~GlamNPCPack/Languages/English/Setup-NPCPack.tra~
 
 //SCRIPTS
 COMPILE EVALUATE_BUFFER ~GlamNPCPack/Script~
