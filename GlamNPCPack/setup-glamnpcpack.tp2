@@ -175,12 +175,7 @@ END
 
 //AUDIO
 
-LAF HANDLE_AUDIO
-  STR_VAR
-    audio_path = ~GlamNPCPack/audio~
-    oggdec_path = ~GlamNPCPack/audio~
-    sox_path = ~GlamNPCPack/audio~
-END
+LAF HANDLE_AUDIO END
 
 
 
