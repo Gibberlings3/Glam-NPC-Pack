@@ -320,7 +320,7 @@ I_C_T ~%tutu_var%TENYA~ 0 GV#LITTInterjectTENYA1
 ~She's twelve at the most. Something ain't right here.~
 END
 
-I_C_T ~%tutu_var%TENYA~ 5 GV#LITTInterjectTENYA2
+I_C_T2 ~%tutu_var%TENYA~ 5 GV#LITTInterjectTENYA2
 == GV#LITTJ IF ~InParty("GV#LITT") InMyArea("GV#LITT") !StateCheck("GV#LITT",CD_STATE_NOTVALID)~ THEN
 ~That's enough, <CHARNAME>. We weren't given the whole story here, and it'll have to be one hell of a tale before I'll kill a girl this age. ~
 END
