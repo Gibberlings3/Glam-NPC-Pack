@@ -32,3 +32,19 @@ RESPONSE #100
 Wait(1)
 StartDialogueNoSet("GV#DAVE")
 END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpell(CLERIC_CLOAK_OF_FEAR)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_CLOAK_OF_FEAR)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)
+END

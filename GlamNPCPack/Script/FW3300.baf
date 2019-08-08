@@ -4,6 +4,7 @@ THEN
 RESPONSE #100
 SetGlobal("GV#DAVEExists","%Beregost%",1)
 CreateCreature("GV#DAVE",[2100.2480],0)
+Continue()
 END
 
 

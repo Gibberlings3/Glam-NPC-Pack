@@ -12,6 +12,7 @@ END
 IF
 OR (2) !InParty("GV#DAVE") Dead("GV#DAVE")
 Global("GV#JEFFIntro","GLOBAL",0)
+Global("GV#JEFFHostile","GLOBAL",0)
 THEN
 RESPONSE #100
 Enemy()
@@ -21,4 +22,77 @@ ActionOverride("GV#KELL",Enemy()
 ActionOverride("GV#PAM",Enemy()
 ActionOverride("GV#PHIL",Enemy()
 ActionOverride("GV#THUN",Enemy()
+SetGlobal("GV#JEFFHostile","GLOBAL",1)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpell(WIZARD_STONE_SKIN)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_STONE_SKIN)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpell(WIZARD_HASTE)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_HASTE)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpell(WIZARD_CHAOS)
+THEN
+  RESPONSE #100
+    Spell(Nearestenemyof(Myself),WIZARD_CHAOS)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpell(WIZARD_SLOW)
+THEN
+  RESPONSE #100
+    Spell(Nearestenemyof(Myself),WIZARD_SLOW)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpell(CLERIC_ANIMATE_DEAD)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_ANIMATE_DEAD)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpell(CLERIC_UNHOLY_BLIGHT)
+THEN
+  RESPONSE #100
+    Spell(Nearestenemyof(Myself),CLERIC_UNHOLY_BLIGHT)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpell(CLERIC_FLAME_STRIKE)
+THEN
+  RESPONSE #100
+    Spell(Nearestenemyof(Myself),CLERIC_FLAME_STRIKE)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpell(CLERIC_POISON)
+THEN
+  RESPONSE #100
+    Spell(Nearestenemyof(Myself),CLERIC_POISON)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpell(WIZARD_MAGIC_MISSILE)
+THEN
+  RESPONSE #100
+    Spell(Nearestenemyof(Myself),WIZARD_MAGIC_MISSILE)
 END

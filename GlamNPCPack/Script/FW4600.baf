@@ -4,6 +4,7 @@ THEN
 RESPONSE #100
 SetGlobal("GV#LITTExists","%BearRiver%",1)
 CreateCreature("GV#LITT",[820.3230],2)
+Continue()
 END
 
 

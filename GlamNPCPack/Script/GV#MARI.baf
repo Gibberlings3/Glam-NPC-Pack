@@ -26,3 +26,37 @@ THEN
 RESPONSE #100
 Enemy()
 END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpell(CLERIC_CLOAK_OF_FEAR)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_CLOAK_OF_FEAR)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpell(CLERIC_MENTAL_DOMINATION)
+THEN
+  RESPONSE #100
+    Spell(Nearestenemyof(Myself),CLERIC_MENTAL_DOMINATION)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HasItem("WAND11",Myself)
+THEN
+  RESPONSE #100
+   UseItem("WAND11",Nearestenemyof(Myself))
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpell(CLERIC_RIGID_THINKING)
+THEN
+  RESPONSE #100
+    Spell(Nearestenemyof(Myself),CLERIC_RIGID_THINKING)
+END
+
+

@@ -5,6 +5,7 @@ THEN
 RESPONSE #100
 SetGlobal("GV#FLARExists","%Nashkel_BelchingDragonTavern%",1)
 CreateCreature("GV#FLAR",[420.240],0)
+Continue()
 END
 
 IF
@@ -15,6 +16,7 @@ THEN
 RESPONSE #100
 SetGlobal("GV#FLARExists","%Nashkel_BelchingDragonTavern%",2)
 ActionOverride("GV#FLAR",DestroySelf())
+Continue()
 END
 
 

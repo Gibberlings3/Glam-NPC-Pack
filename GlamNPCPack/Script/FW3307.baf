@@ -4,6 +4,7 @@ THEN
 RESPONSE #100
 SetGlobal("VYNDExists","%Beregost_BurningWizard_L1%",1)
 CreateCreature("GV#VYND",[170.120],0)
+Continue()
 END
 
 

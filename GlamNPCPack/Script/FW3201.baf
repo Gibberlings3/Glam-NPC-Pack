@@ -11,6 +11,7 @@ CreateCreature("GV#PAM",[420.210],4)
 CreateCreature("GV#BRIA",[330.255],4)
 CreateCreature("GV#ALAN",[285.250],4)
 CreateCreature("GV#KELLa",[210.205],2)
+Continue()
 END
 
 IF
@@ -21,6 +22,7 @@ RESPONSE #100
 SetGlobal("GV#KnightsExist","%HighHedge_House%",1)
 CreateCreature("GV#STOR",[100.320],12)
 CreateCreature("GV#STOR",[120.190],12)
+Continue()
 END
 
 IF
@@ -30,5 +32,6 @@ THEN
 RESPONSE #100
 ActionOverride("GV#JEFF",DestroySelf())
 SetGlobal("GV#JEFFDestroyed","%HighHedge_House%",1)
+Continue()
 END
 

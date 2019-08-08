@@ -10,4 +10,5 @@ CreateCreature("GV#SIGU",[650.420],0)
 CreateCreature("GV#KRAK",[600.420],0)
 CreateCreature("GV#MARI",[620.420],0)
 CreateCreature("GV#WINK",[670.420],0)
+Continue()
 END

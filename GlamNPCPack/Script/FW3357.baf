@@ -4,6 +4,7 @@ THEN
 RESPONSE #100
 SetGlobal("GV#MOIDExists","%Beregost_RedSheaf_L1%",1)
 CreateCreature("GV#MOID",[525.430],12)
+Continue()
 END
 
 
