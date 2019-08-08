@@ -57,10 +57,10 @@ APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
 
     /* Imoen BIMOEN.DLG rebuild */
   ACTION_IF NOT (FILE_EXISTS_IN_GAME ~_bimoen.dlg~) AND (GAME_IS ~tutu tutu_totsc~) THEN BEGIN
-    COMPILE ~GlamNPCPack/Dialogue/x#bimoen_tutu.d~
+    COMPILE ~GlamNPCPack/imoen/x#bimoen_tutu.d~
   END ELSE BEGIN
     ACTION_IF NOT (FILE_EXISTS_IN_GAME ~bimoen2.dlg~) AND (GAME_IS ~bgt~) THEN BEGIN
-      COMPILE ~GlamNPCPack/Dialogue/x#bimoen_bgt.d~
+      COMPILE ~GlamNPCPack/imoen/x#bimoen_bgt.d~
     END
   END
 
@@ -390,23 +390,28 @@ SAY NAME2 ~Littlun~
 
 SAY BIO ~When asked about her past, Littlun proudly informs you of how she was taken in as a baby by a tribe of elves, who raised her as one of their own. However, while she is very much a product of the wilds, the mechanical, rapid-fire crossbow she carries is the work of her long-deceased father, once a master craftsman and wandering scholar. She is a walking contradiction, a juxtaposition of untamed nature and advanced technology. ~
 
-SAY LEADER ~It's about time you recognised my superior qualities.~ [GV#LITTb]
-SAY TIRED ~A little nap about now wouldn't hurt none.~ [GV#LITTc]
-SAY BORED ~Is there nothing else we should be doing?~ [GV#LITTd]
-SAY BATTLE_CRY1 ~Who's in for it now?!~ [GV#LITTa]
-SAY BATTLE_CRY2 ~Who's in for it now?!~ [GV#LITTa]
-SAY BATTLE_CRY3 ~Who's in for it now?!~ [GV#LITTa]
-SAY BATTLE_CRY4 ~Who's in for it now?!~ [GV#LITTa]
-SAY BATTLE_CRY5 ~Who's in for it now?!~ [GV#LITTa]
+SAY LEADER ~Yeah, I'll take point. Saves me having to shoot past you lot.~ [GV#LITTb]
+SAY TIRED ~I'm used to trekking, but this is just torture. Let's bed down.~ [GV#LITTc]
+SAY BORED ~Are we gonna get a move on, or what?~ [GV#LITTd]
+SAY BATTLE_CRY1 ~Time for some target practice!~ [GV#LITTa]
+SAY BATTLE_CRY2 ~Time for some target practice!~ [GV#LITTa]
+SAY BATTLE_CRY3 ~Time for some target practice!~ [GV#LITTa]
+SAY BATTLE_CRY4 ~Time for some target practice!~ [GV#LITTa]
+SAY BATTLE_CRY5 ~Time for some target practice!~ [GV#LITTa]
 SAY DAMAGE ~~ [GV#LITTl]
-SAY DYING ~~ [GV#LITTm]
-SAY HURT ~Oi! That smarted.~ [GV#LITTe]
-SAY SELECT_COMMON1 ~Haven't you got nothing better to do?~ [GV#LITTf]
-SAY SELECT_COMMON2 ~I'm not bothered.~ [GV#LITTg]
-SAY SELECT_COMMON3 ~What do you want?~ [GV#LITTh]
-SAY SELECT_ACTION1 ~Right. It's on me, is it?~ [GV#LITTi]
-SAY SELECT_ACTION2 ~I'll get it in a minute, guv.~ [GV#LITTj]
-SAY SELECT_ACTION3 ~I may as well.~ [GV#LITTk]
+SAY DYING ~Look after the crossbow...~ [GV#LITTm]
+SAY HURT ~Make mine a healing potion...~ [GV#LITTe]
+SAY SELECT_COMMON1 ~Need a hand?~ [GV#LITTf]
+SAY SELECT_COMMON2 ~Ready for action.~ [GV#LITTg]
+SAY SELECT_COMMON3 ~Just say the word.~ [GV#LITTh]
+SAY SELECT_ACTION1 ~Righto.~ [GV#LITTi]
+SAY SELECT_ACTION2 ~Easy enough.~ [GV#LITTj]
+SAY SELECT_ACTION3 ~Give us a sec.~ [GV#LITTk]
+SAY CRITICAL_HIT ~Hah! Right between the eyes!~ [GV#LITTz]
+SAY CRITICAL_MISS ~Ugh, that's not like me...~ [GV#LITT1]
+SAY TARGET_IMMUNE ~I ain't making a dent here!~ [GV#LITT2]
+SAY HIDDEN_IN_SHADOWS ~They won't catch a whiff of me.~ [GV#LITT5]
+SAY SPELL_DISRUPTED ~Argh, my spell's gone tits up!~ [GV#LITT6]
 
 
 COPY ~GlamNPCPack/Creature/GV#PIER.cre~ ~override/GV#PIER.cre~
@@ -523,7 +528,7 @@ COMPILE EVALUATE_BUFFER ~GlamNPCPack/Script~
 
 
 
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~bdcaelar.cre~ THEN BEGIN
+ACTION_IF GAME_IS ~bgee eet~ AND NOT FILE_EXISTS_IN_GAME ~bdcaelar.cre~ THEN BEGIN
   COPY ~GlamNPCPack/Script/bgee~ ~override~
 END
 
