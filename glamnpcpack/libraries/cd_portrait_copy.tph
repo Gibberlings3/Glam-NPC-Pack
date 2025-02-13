@@ -21,6 +21,7 @@ used:
   blonde imoen, as blondeimmy/lib/cd_portrait_copy.tph [local symlink]
   gavin, as gavin/lib/cd_portrait_copy.tph [local symlink]
   gavin bg2, as gavin_bg2/lib/cd_portrait_copy.tph [local symlink]
+  Glam's NPC Pack, as glamnpcpack/libraries/cd_portrait_copy.tph [local symlink]
   Haldamir, as haldamir/lib/cd_portrait_copy.tph [local symlink]
   Hannah's Portrait Pack, as hannahs_portraits/lib/cd_portrait_copy.tph [local symlink]
   Infinity Collection Portrait Pack, as cd_icpp/lib/cd_portrait_copy.tph [local symlink]
@@ -28,6 +29,7 @@ used:
   Plasmocat's Picks of the Litter, as picks_of_the_litter/lib/cd_portrait_copy.tph [local symlink]
   Plasmocat's Portrait Pack, as plasmoportraits/lib/cd_portrait_copy.tph [local symlink]
   RoorenArt's Portrait Pack, as roorenart_bg2/lib/cd_portrait_copy.tph [local symlink]
+  Sarah, as sarahtob/lib/cd_portrait_copy.tph [symbolic link]
 
 platform:
   all games
