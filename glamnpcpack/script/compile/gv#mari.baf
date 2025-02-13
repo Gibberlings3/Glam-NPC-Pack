@@ -6,7 +6,7 @@ IF
   ActionListEmpty()
 THEN
   RESPONSE #100
-    EscapeAreaMove("%EBaldursGate_SorcerousSundries_L1%",370,300,S)
+    EscapeAreaMove("%EBaldursGate_SorcerousSundries_L1%",370,300,0)
 END   
 
 IF 
