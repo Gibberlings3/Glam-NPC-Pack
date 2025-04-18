@@ -396,15 +396,14 @@ CHAIN GV#LITTJ GV#LITTSonner4
 == GV#LITTJ IF ~IsValidForPartyDialogue("GV#DAVE")~ THEN @4875 /* *Shut up*, Dave. */
 EXIT
 
-
 //Perdue
 INTERJECT ~%tutu_var%PERDUE~ 7 GV#LITTInterjectPERDUE1
 == GV#LITTJ IF ~InParty("GV#LITT") InMyArea("GV#LITT") !StateCheck("GV#LITT",CD_STATE_NOTVALID)~ THEN
 @4876 /* Psh. If it's a gnoll, I'd *pay* fifty gold to wipe its arse. */
 = @4877 /* With the sword, obviously. */
 END
-++ @4878 /* You've got yourself a deal. */ EXTERN ~%tutu_var%PERDUE~ ~3~
-++ @4879 /* For 50 gold that gnoll can wipe his own arse. Hey, did you hear the one about the halfling who climbed into the ale keg to lick up the last drop? */ EXTERN GV#LITTJ GV#LITTInterjectPERDUE2
+++ @4878 DO ~SetGlobal("PerduePayment","GLOBAL",50) SetGlobal("HelpPerdue","GLOBAL",1) AddJournalEntry(27354,QUEST)~ EXTERN ~%tutu_var%PERDUE~ ~3~
+++ @4879 DO ~SetGlobal("PerduePayment","GLOBAL",50) SetGlobal("HelpPerdue","GLOBAL",1) AddJournalEntry(27354,QUEST)~ EXTERN GV#LITTJ GV#LITTInterjectPERDUE2
 
 CHAIN GV#LITTJ GV#LITTInterjectPERDUE2
 @4880 /* I haven't. Why don't you tell me? */
