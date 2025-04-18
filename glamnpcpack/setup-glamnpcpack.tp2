@@ -1,12 +1,12 @@
 BACKUP ~weidu_external/GlamNPCPack/backup~
 SUPPORT ~https://www.gibberlings3.net/forums/forum/186-glams-npc-pack/~
 
-VERSION ~v5~
+VERSION ~v6~
 
 ALWAYS // why is there an always block in a one compoennt mod? don't ask questions.
 
   ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
-    FAIL ~DLC Merger is required before mods can be installed on this game. Check the readme for more information and a link to download DLC Merger.~
+    FAIL @16
   END
   
   ACTION_IF !VARIABLE_IS_SET cd_glamnpcpack_always THEN BEGIN // check to make this happen only once per install 
