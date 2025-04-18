@@ -397,13 +397,24 @@ CHAIN GV#LITTJ GV#LITTSonner4
 EXIT
 
 //Perdue
-INTERJECT ~%tutu_var%PERDUE~ 7 GV#LITTInterjectPERDUE1
-== GV#LITTJ IF ~InParty("GV#LITT") InMyArea("GV#LITT") !StateCheck("GV#LITT",CD_STATE_NOTVALID)~ THEN
-@4876 /* Psh. If it's a gnoll, I'd *pay* fifty gold to wipe its arse. */
-= @4877 /* With the sword, obviously. */
+// why not interject? want to use COPY_TRANS to keep journal entries, but use ALTER_TRANS so that the flippant reply
+// goes to Littlun's second interjection, so we do a lot of stuff manually instead
+EXTEND_BOTTOM ~%tutu_var%PERDUE~ 7
+  IF ~Global("GV#LITTInterjectPERDUE1","GLOBAL",0) 
+      InParty("GV#LITT") 
+      InMyArea("GV#LITT") !
+      StateCheck("GV#LITT",CD_STATE_NOTVALID)~ THEN DO ~SetGlobal("GV#LITTInterjectPERDUE1","GLOBAL",1)~ EXTERN GV#LITTJ GV#LITTInterjectPERDUE1a
 END
-++ @4878 DO ~SetGlobal("PerduePayment","GLOBAL",50) SetGlobal("HelpPerdue","GLOBAL",1) AddJournalEntry(27354,QUEST)~ EXTERN ~%tutu_var%PERDUE~ ~3~
-++ @4879 DO ~SetGlobal("PerduePayment","GLOBAL",50) SetGlobal("HelpPerdue","GLOBAL",1) AddJournalEntry(27354,QUEST)~ EXTERN GV#LITTJ GV#LITTInterjectPERDUE2
+
+APPEND GV#LITTJ
+  IF ~~ THEN BEGIN GV#LITTInterjectPERDUE1a SAY @4876
+    IF ~~ GOTO GV#LITTInterjectPERDUE1b
+  END
+  IF ~~ THEN BEGIN GV#LITTInterjectPERDUE1b SAY @4877
+    COPY_TRANS ~%tutu_var%PERDUE~ 7
+  END
+END
+ALTER_TRANS GV#LITTJ BEGIN GV#LITTInterjectPERDUE1b END BEGIN 1 END BEGIN ~EPILOGUE~ ~GOTO GV#LITTInterjectPERDUE2~ END // originally to 5 (can get there from 3) 
 
 CHAIN GV#LITTJ GV#LITTInterjectPERDUE2
 @4880 /* I haven't. Why don't you tell me? */
