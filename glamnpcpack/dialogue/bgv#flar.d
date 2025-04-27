@@ -1115,7 +1115,7 @@ Global("GV#FLARLittlun1","GLOBAL",0)~ THEN BGV#FLAR GV#FLARLitlun1
 DO ~SetGlobal("GV#FLARLittlun1","GLOBAL",1)~
 == BGV#LITT @1557 /* Littlun. */
 == BGV#FLAR @264 /* What? */
-== BGV#LITT @1558 /* @94 /* Littlun */, not "little one."  */
+== BGV#LITT @1558 /* * Littlun *, not "little one."  */
 == BGV#FLAR @1559 /* The difference being? */
 == BGV#LITT @1560 /* Well, one of 'em's patronising big folk rubbish that I don't much care for. The other is my name. */
 == BGV#FLAR @1561 /* They mean the same thing! */

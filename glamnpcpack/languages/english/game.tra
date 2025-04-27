@@ -1736,7 +1736,7 @@ I have followed the trail this far. Let us see what waits at the end of it.~
 @1555 = ~Value is not utility, dwarf. And that which has value should be kept.~
 @1556 = ~Stand clear, little one. I seldom watch where I step.~
 @1557 = ~Littlun.~
-@1558 = ~@94 /* Littlun */, not "little one." ~
+@1558 = ~*Littlun*, not "little one."~
 @1559 = ~The difference being?~
 @1560 = ~Well, one of 'em's patronising big folk rubbish that I don't much care for. The other is my name.~
 @1561 = ~They mean the same thing!~
@@ -2040,7 +2040,7 @@ I have followed the trail this far. Let us see what waits at the end of it.~
 @1859 = ~Still. Better half-elf than half...ling.~
 @1860 = ~Littlun, you mustn't think like that. I know it's hard b-being the odd one out, but "odd" doesn't mean "lesser", no matter how much it might feel that way.~
 @1861 = ~When I was growing up, there were times my father would pretend I didn't exist. I'd p-pass him in the halls and he'd fix his gaze ahead. At mealtimes, he'd have a t-table set for four...himself, his wife, and my two half-brothers. And he knew I wouldn't have the c-courage to make myself heard.~
-@1862 = ~Those days, I would kneel down and ask the gods @324 /* Why? */ And then I met Jaheira, and I knew they had answered.~
+@1862 = ~Those days, I would kneel down and ask the gods *Why?* And then I met Jaheira, and I knew they had answered.~
 @1863 = ~Mani naa essa en lle?~
 @1864 = ~Nin essa Khalid, a im onnan min Calimshan.~
 @1865 = ~"My name is Khalid and I was baked in Calimshan?"~
@@ -3136,7 +3136,7 @@ I have followed the trail this far. Let us see what waits at the end of it.~
 @2955 = ~...you do know what my job is, right? I haven't been shy about it.~
 @2956 = ~Oh, I know. I was just wondering, do you think it's right to do what you do? Or do you think it's wrong and not care?~
 @2957 = ~I don't philosophise. I just do it.~
-@2958 = ~Maybe you should. It'd change a lot of lives if people stopped to ask @324 /* Why? */ every so often.~
+@2958 = ~Maybe you should. It'd change a lot of lives if people stopped to ask *Why?* every so often.~
 @2959 = ~How many steps have you taken?~
 @2960 = ~Steps? From where?~
 @2961 = ~From when you learned how to walk. In total.~
@@ -3588,7 +3588,7 @@ I have followed the trail this far. Let us see what waits at the end of it.~
 @3407 = ~That's for you to decide. Having a big list of rules defeats the point. The way you choose to do it is just as important as how well you do it.~
 @3408 = ~No, <CHARNAME>. Talos brings the storm. He *is* the storm, and the storm is the only judge. There's no disputing it.~
 @3409 = ~Maybe it is. But it made Jeff a Stormlord, and nobody deserved it more than he did. I'm not going to argue with the results.~
-@3410 = ~I was there that day, when they had the Trial. It was just after told them I wanted to join. I still remember everyone gathered in the field. Rain bucketing down, but nobody had a drop of water on them. Wind strong enough to fell trees, but everyone stood steady. Lightning flaring overhead, and they just raised their hands like they could've snatched it out of the sky.~
+@3410 = ~I was there that day, when they had the Trial. It was just after I told them I wanted to join. I still remember everyone gathered in the field. Rain bucketing down, but nobody had a drop of water on them. Wind strong enough to fell trees, but everyone stood steady. Lightning flaring overhead, and they just raised their hands like they could've snatched it out of the sky.~
 @3411 = ~They all seemed like they'd been doing it forever. And there was me, the fisherman's boy, still with river weed in my shoes, acting like I had any business.~
 @3412 = ~Once everyone else had gone, Stormlord Jeff took me into the temple and opened that beat-up trunk in the bedroom, and inside was his old military robe, with the purple dragon insignia and everything. And he said "Never feel constrained by what you used to be." I'll never forget that.~
 @3413 = ~I wonder what these Athkatlans are going to be like. It's been ages since we've had anyone new around. Not counting you, of course.~
@@ -6201,7 +6201,7 @@ I have followed the trail this far. Let us see what waits at the end of it.~
 @6020 = ~I think Skie's a lost cause.~
 @6021 = ~Why do you care about Viconia?~
 @6022 = ~So much for cheering Xan up, eh?~
-@6023 = ~If @117 /* Moidre */ is just your clan name, what's your actual name?~
+@6023 = ~If *Moidre* is just your clan name, what's your actual name?~
 @6024 = ~Want a drink, Moidre?~
 @6025 = ~Fine.~
 @6026 = ~You're not dead yet. That's my metric. Doing fine.~
@@ -8215,3 +8215,5 @@ I have followed the trail this far. Let us see what waits at the end of it.~
 @8034 = ~Your friend clearly knows a bargain when <PRO_HESHE> sees it.~
 @8035 = ~Indeed. Ta-ta, now.~
 @8036 = ~You folks are weird...~
+// this is just a copy-paste of existing BG string #15371
+@8037 = ~Show me a pretty bit of gold and you can have anything in the store.~

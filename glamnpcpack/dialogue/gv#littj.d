@@ -243,11 +243,11 @@ I_C_T2 ~%tutu_var%RAMAZI~ 15 GV#LITTInterjectRAMAZI2
 DO ~SetGlobal("GV#LITTJoined","GLOBAL",0) LeaveParty() Enemy() Attack("Ramazith")~
 END
 
-//Nashkel Shopkeep
-I_C_T2 ~%tutu_var%SHOPKN~ 0 GV#LITTInterjectSHOPKN1
+I_C_T ~%tutu_var%SHOPKN~ 0 GV#LITTInterjectSHOPKN1
 == GV#LITTJ IF ~InParty("GV#LITT") InMyArea("GV#LITT") !StateCheck("GV#LITT",CD_STATE_NOTVALID)~ THEN
 @4840 /* Winter wolf. I dunno about "easy pickings", <CHARNAME>. Half-again as big as a normal wolf, and breath that'd freeze your blood in your veins. What some people won't do for a fancy rug... */
-END
+== ~%tutu_var%SHOPKN~ @8037
+END 
 
 //Farmer
 I_C_T2 ~%tutu_var%FARMBE~ 4 GV#LITTInterjectFARMBE1
