@@ -97,7 +97,7 @@ ACTION_IF enhanced_edition BEGIN
   // BAELOTH BANTER
   PRINT @15 /* BG:EE detected - Baeloth interdia.2da append - set Baeloth's banter file (BBAELOTH) */
   ACTION_IF NOT (FILE_EXISTS_IN_GAME ~BBAELOTH.dlg~) THEN BEGIN
-    COMPILE EVALUATE_BUFFER ~GlamNPCPack/dialogue/BBAELOTHFix.d~
+    COMPILE EVALUATE_BUFFER ~GlamNPCPack/fixes/BBAELOTHFix.d~
   END
     
   COPY ~GlamNPCPack/Creature/GV#FLAR.cre~ ~override/GV#FLAR.cre~
@@ -111,7 +111,7 @@ END ELSE BEGIN
 
   // Fixing Imoen's dialogue file
   ACTION_IF !FILE_EXISTS_IN_GAME ~%IMOEN_BANTER%.dlg~ THEN BEGIN
-    COMPILE EVALUATE_BUFFER ~GlamNPCPack/dialogue/bimoen.d~ 
+    COMPILE EVALUATE_BUFFER ~GlamNPCPack/fixes/bimoen.d~ 
   END
   
   /* ACTION.IDS and TRIGGER.IDS patching to ToB - thanks, Cam, if you read it */
