@@ -64,6 +64,10 @@ LANGUAGE ~English~ ~English~
   ~GlamNPCPack/Languages/English/game.tra~
   ~GlamNPCPack/Languages/English/weidu.tra~
 
+LANGUAGE ~Schinese~ ~schinese~ 
+  ~GlamNPCPack/Languages/schinese/game.tra~
+  ~GlamNPCPack/Languages/schinese/weidu.tra~
+
 BEGIN @14 /* Glam's NPC Pack for BG:EE, BGT and BG TUTU */
 REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt bgee eet~ @13
 LABEL ~gv#_glams_npc_pack~
